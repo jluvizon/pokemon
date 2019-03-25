@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
-import PokemonList from './PokemonList';
+import React, { Component } from "react";
+import PokemonList from "./PokemonList";
 
-import './App.css';
+import "./App.css";
 
-class App extends Component{
-render(){
-    return  <div className="container">
-              <PokemonList/>
-            </div>;
+class App extends Component {
+  render() {
+    return (
+      <div className="container">
+        <PokemonList />
+      </div>
+    );
   }
 }
 
