@@ -1,4 +1,4 @@
-App developed to list Wild Pokemons and capture/realase them.
+App developed to list wild Pokemons and capture/realase them.
 
 ## Available Scripts
 
