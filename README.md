@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+App developed to list Wild Pokemons and capture/realase them.
 
 ## Available Scripts
 
