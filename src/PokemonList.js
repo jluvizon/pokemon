@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import WildPokemon from "./WildPokemon";
 import CatchedPokemon from "./CatchedPokemon";
 import * as Constants from "./constants";
+import axios from "axios";
 
 class PokemonList extends Component {
   constructor(props) {
@@ -26,17 +27,14 @@ class PokemonList extends Component {
     }, Constants.INTERVAL_TO_FETCH_NEW_POKEMON);
   }
 
-  fetchWildPokemon = pokemonId => {
-    window
-      .fetch(Constants.GET_POKEMON_URL + pokemonId)
-      .then(res => res.json())
-      .then(res => {
-        this.state.wildPokemons.push(res);
-        this.setState({
-          wildPokemons: this.state.wildPokemons
-        });
+  fetchWildPokemon(pokemonId) {
+    axios.get(Constants.GET_POKEMON_URL + pokemonId).then(res => {
+      this.state.wildPokemons.push(res.data);
+      this.setState({
+        wildPokemons: this.state.wildPokemons
       });
-  };
+    });
+  }
 
   catchPokemon(index) {
     if (this.state.catchedPokemons.length === Constants.MAX_CATCHED_POKEMONS)
